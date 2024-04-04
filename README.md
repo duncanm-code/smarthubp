@@ -13,13 +13,14 @@ split into meter names, timestamps, and readings.
 
 This package is designed to be installed via pip:
 
-'''bash
+
+```bash
 pip install smarthubp
-'''
+```
 
 ## Usage
 
-'''code
+```code
 import smarthubp
 smarthubp.set_import_time_offset(8)  # Number of hours to add to the readings for timezones.
 reading_service = smarthubp.read_from_file('filename.txt')]
@@ -28,7 +29,7 @@ meter = reading_service.meters[0]
 reading = reading_service[meter][0].reading
 time = reading_service[meter][0].timestamp
 print(f"First Result from {meter} is {reading} at {time}")
-'''
+```
 
 
 
