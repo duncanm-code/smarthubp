@@ -20,7 +20,7 @@ pip install smarthubp
 
 ## Usage
 
-```code
+```python
 import smarthubp
 
 reading_service = smarthubp.readings_from_file('filename.txt')
