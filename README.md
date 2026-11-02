@@ -22,13 +22,17 @@ pip install smarthubp
 
 ```code
 import smarthubp
-smarthubp.set_import_time_offset(8)  # Number of hours to add to the readings for timezones.
-reading_service = smarthubp.read_from_file('filename.txt')]
 
-meter = reading_service.meters[0]
-reading = reading_service[meter][0].reading
-time = reading_service[meter][0].timestamp
-print(f"First Result from {meter} is {reading} at {time}")
+reading_service = smarthubp.readings_from_file('filename.txt')
+
+for meter in reading_service.meter_names:
+    readings = reading_service[meter]
+    if readings:
+        first = readings[0]
+        print(
+            f"First result from {meter} is "
+            f"{first.kwh} kWh at {first.timestamp}"
+        )
 ```
 
 
